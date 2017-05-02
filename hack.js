@@ -1,5 +1,5 @@
 var test_array =
-    [[0, 0, 1, 1, 1, 1],
+       [[0, 0, 1, 1, 1, 1],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
@@ -32,6 +32,12 @@ function check_for_win(row, col){
             } else {
                 console.log('to left: you did not match 4');
                 // break;
+            }
+        }
+        for(var r = row; r < test_array[col].length; r++){
+            if(test_array[col][r+1] === class_player1){
+                temp_win_count++;
+
             }
         }
     }
