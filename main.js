@@ -117,3 +117,4 @@ function display_array(array) {
     }
     console.log(output);
 }
+display_array(create_board_array);
