@@ -26,18 +26,30 @@ create_board_array(6,5);
 $(document).ready(function(){
 
 //Event Listener
-// initialize_game();
+$("#play_game").on("click",initialize_game);
 
 });
 
 function initialize_game() {
 
 // jQuery DOM CREATION
+    var $div = $("<div>").addClass("column").text("O");
+    var $row = $("<div>").addClass("row");
+    var $section = $("#board-wrapper");
 
-
+    create_DOM_board(6,5);
 
 }
 
+function create_DOM_board(col, row) {
+    for(var i = 0; i < row; i++) {
+        $section.append($row);
+        for(var j = 0; j < col; j++) {
+            $row.append($div);
+        }
+        // board.push(newRow);
+    }
+}
 
 
 function add_token() {
@@ -117,4 +129,4 @@ function display_array(array) {
     }
     console.log(output);
 }
-display_array(create_board_array);
+display_array(board);
