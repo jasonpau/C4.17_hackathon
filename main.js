@@ -33,20 +33,21 @@ $("#play_game").on("click",initialize_game);
 function initialize_game() {
 
 // jQuery DOM CREATION
-    var $div = $("<div>").addClass("column").text("O");
-    var $row = $("<div>").addClass("row");
-    var $section = $("#board-wrapper");
 
     create_DOM_board(6,5);
 
 }
 
 function create_DOM_board(col, row) {
+    var $div = $("<div>").addClass("column").text("O");
+    var $row = $("<div>").addClass("row");
+    var $section = $("#board-wrapper");
     for(var i = 0; i < row; i++) {
-        $section.append($row);
         for(var j = 0; j < col; j++) {
             $row.append($div);
+            console.log($row);
         }
+        $section.append($row);
         // board.push(newRow);
     }
 }
