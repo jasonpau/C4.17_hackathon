@@ -59,7 +59,10 @@ function add_token() {
 
 
 function switch_player() {
-
+    current_player++;
+    if (current_player > number_of_players) {
+        current_player = 1;
+    }
 }
 
 
@@ -118,7 +121,7 @@ function check_for_diff_colors() {
 
 
 function game_won() {
-
+    alert(current_player + ' won the game!');
 }
 
 // TESTING FUNCTION!! REMOVE BEFORE GOING LIVE
