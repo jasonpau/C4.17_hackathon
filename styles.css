@@ -1,6 +1,6 @@
 /* TEAM ADD FUNC! -- Here's our stylesheet */
 
-#board-wrapper {
+#board_wrapper {
     border: 5px solid black;
     margin: 0 auto;
     width: auto;
@@ -21,4 +21,28 @@
     height: 50px;
     width: 50px;
     border: 1px solid gray;
+}
+
+.p1, .p2, .p3 {
+
+}
+
+.p1 {
+    background-color: blue;
+}
+
+.p2 {
+    background-color: red;
+}
+
+.p3 {
+    background-color: green;
+}
+
+#setup_background {
+
+}
+
+#setup_wrapper {
+
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<section id="board-wrapper">
+<section id="board_wrapper">
 
     <!-- sample 6 x 5 board for CSS testing purposes -->
     <div class="row"><!-- row 1 -->
@@ -32,7 +32,7 @@
         <div class="column"></div>
         <div class="column"></div>
         <div class="column"></div>
-        <div class="column"></div>
+        <div class="column p3"></div>
         <div class="column"></div>
         <div class="column"></div>
     </div>
@@ -40,19 +40,33 @@
         <div class="column"></div>
         <div class="column"></div>
         <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
+        <div class="column p2"></div>
+        <div class="column p1"></div>
         <div class="column"></div>
     </div>
     <div class="row"><!-- row 5 -->
         <div class="column"></div>
         <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
+        <div class="column p1"></div>
+        <div class="column p2"></div>
+        <div class="column p3"></div>
         <div class="column"></div>
     </div>
 
+</section>
+
+<section id="setup_background">
+    <div id="setup_wrapper">
+        <h2>Game Options</h2>
+        <hr />
+        <button id="two_players">2 Player</button>
+        <button id="three_players">3 Player</button>
+        <hr />
+        <label for="column_input">Columns: </label><input value="5" id="column_input" />
+        <label for="row_input">Rows: </label><input value="6" id="row_input" />
+        <hr />
+        <button type="button" id="play_game">Play</button>
+    </div>
 </section>
 
 </body>
