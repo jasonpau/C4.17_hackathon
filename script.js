@@ -43,7 +43,7 @@ function check_for_win(row, col){
         if(test_array[r][col] === class_player1){
             temp_win_count++;
             if(temp_win_count === 4){
-                console.log('You won the game!');\
+                console.log('You won the game!');
                 return;
             }
         } else {
