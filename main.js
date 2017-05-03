@@ -61,18 +61,27 @@ function create_DOM_board(col, row) {
 
 
 function add_token(clicked) {
-    // we're passing in the column that was clicked...just what is this though? and object?
     // which player?
+
     var open_cell;
+
+    // get the index of the column clicked (starts at 0)
+    var column_number = clicked.index();
 
     console.log(clicked);
 
     // go down the column, checking each cell for an empty slot
-    for (var i = 0; i < board.length; i++) {
-        if (board[column_number][i] === current_player) {
-
+    for (var r = 0; r < board.length; r++) {
+        if (board[r][column_number] === 0) {
+            open_cell = $('.row:nth-child(4) .column:nth-child(3)');
+        } else {
+            //$('.row:nth-child(' + r + ') .column:nth-child(' + column_number + ')').addClass(current_player);
+            //clicked.addClass(current_player);
         }
     }
+    open_cell.addClass(current_player);
+
+    console.log(open_cell);
 }
 
 
