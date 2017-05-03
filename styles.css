@@ -43,13 +43,15 @@ hr {
                 inset 0 2px 15px rgba(0,0,0,0.4);
 }
 
+
+#board_background {
+    text-align: center;
+}
+
 #board_wrapper {
     margin: 0 auto;
     font-size: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    display: inline-block;
     border: 5px solid lightyellow;
     box-shadow: 0 2px 15px rgba(0,0,0,0.4),
                 inset 0 2px 15px rgba(0,0,0,0.4);
@@ -150,4 +152,21 @@ hr {
 
 #won_wrapper {
     text-align: center;
+}
+
+#play_game,
+#new_game {
+    padding: 10px 20px;
+    color: purple;
+    font-family: 'Cherry Swash', serif;
+    font-size: 24px;
+    font-weight: bold;
+    border: 0;
+    background: lightyellow;
+    opacity: 0.9;
+}
+
+#play_game:hover,
+#new_game:hover {
+    opacity: 1;
 }

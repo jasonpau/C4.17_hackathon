@@ -164,7 +164,7 @@ function switch_player() {
     if (current_player > number_of_players) {
         current_player = 1;
     }
-    $("#current-player").text("Player " + current_player + ", you're up~!");
+    $("#current-player").text("Player " + current_player + " you're up~!");
 }
 
 // I DON'T THINK WE NEED THIS...WE'RE UPDATING THE DOM IN THE ADD_TOKEN FUNCTION
