@@ -109,3 +109,12 @@ function game_won() {
 
 }
 
+// TESTING FUNCTION!! REMOVE BEFORE GOING LIVE
+function display_array(array) {
+    var output = '\n';
+    for (var i = 0; i < array.length; i++) {
+        output += array[i].join(' ') + '\n';
+    }
+    console.log(output);
+}
+display_array(create_board_array);
