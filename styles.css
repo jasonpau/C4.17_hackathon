@@ -1,4 +1,11 @@
 /* TEAM ADD FUNC! -- Here's our stylesheet */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
 
 #board_wrapper {
     border: 5px solid black;
@@ -39,10 +46,38 @@
     background-color: green;
 }
 
-#setup_background {
+#setup_background,
+#won_background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}
 
+#setup_wrapper,
+#won_wrapper {
+    border: 2px solid black;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 3%;
+}
+
+#setup_background {
+    visibility: visible;
 }
 
 #setup_wrapper {
+
+}
+
+#won_background {
+    visibility: hidden;
+}
+
+#won_wrapper {
 
 }

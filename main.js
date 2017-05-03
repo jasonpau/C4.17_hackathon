@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 //Event Listener
     $("#play_game").on("click",initialize_game);
+    $("#new_game").on("click",reset_game);
     $("#two_players").click(function() {
         number_of_players = 2;
         console.log("Number of Players: ",number_of_players);
@@ -58,11 +59,15 @@ $(document).ready(function(){
 
 function initialize_game() {
 
+    $('#setup_background').css('visibility','hidden');
     create_board_array(number_of_col,number_of_row);
     create_DOM_board(number_of_col,number_of_row);
 
 }
 
+function reset_game() {
+
+}
 
 function create_board_array(col, row) {
     for(var i = 0; i < row; i++) {
@@ -108,10 +113,10 @@ function add_token(clicked) {
     console.log(clicked);
 
     // check to see if the very top is full, if so, exit this add token (it'll stay on the current player)
-    if (board[0][c] !== 0) {
-        console.log('it be full!!!');
-        //break;
-    }
+    // if (board[0][c] !== 0) {
+    //     console.log('it be full!!!');
+    //     //break;
+    // }
 
     // go down the column, checking each cell for an empty slot
     for (var r = 0; r < board.length; r++) {
@@ -158,7 +163,10 @@ function check_for_diff_colors() {
 
 
 function game_won() {
-    alert(current_player + ' won the game!');
+
+    $('#won_message').text('Player ' + current_player + ' won the game!');
+    $('#won_background').css('visibility','visible');
+
 }
 
 // TESTING FUNCTION!! REMOVE BEFORE GOING LIVE
