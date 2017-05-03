@@ -1,7 +1,7 @@
 var test_array =
-    [[0, 0, 1, 1, 1, 1],
+       [[0, 0, 1, 0, 1, 1],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [1, 1, 1, 1, 0, 1]];
 
@@ -18,7 +18,6 @@ function check_for_win(row, col){
                 break;
             } else {
                 console.log('to right: you did not match 4');
-                // break;
             }
         }
     }
@@ -31,12 +30,22 @@ function check_for_win(row, col){
                 break;
             } else {
                 console.log('to left: you did not match 4');
-                // break;
+            }
+        }
+        for(var r = row; r < test_array[col].length; r--){
+            if(test_array[col][r+1] === class_player1){
+                temp_win_count++;
+                if(temp_win_count === 4){
+                    console.log('You won the game');
+                    break;
+                }else{
+                    console.log('you did not match 4');
+                }
             }
         }
     }
 }
-// check_for_win(4, 0);
+check_for_win(2, 3);
 
 // col : upward
 
