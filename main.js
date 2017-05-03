@@ -26,28 +26,62 @@ create_board_array(6,5);
 $(document).ready(function(){
 
 //Event Listener
-// initialize_game();
+$("#play_game").on("click",initialize_game);
 
 });
+
 
 function initialize_game() {
 
 // jQuery DOM CREATION
 
-
+    create_DOM_board(6,5);
 
 }
 
+function create_DOM_board(col, row) {
+    var $section = $("#board_wrapper");
+    $section.empty($("div.row"));
+    for(var i = 0; i < row; i++) {
+        var $row = $("<div>").addClass("row");
+
+        for(var j = 0; j < col; j++) {
+            var $div = $("<div>").addClass("column");
+            $row.append($div);
+            console.log($row);
+        }
+        $section.append($row);
+        // board.push(newRow);
+    }
+    $section.on("click",".column",function() {
+        var click = $(this);
+        add_token(click);
+    });
+}
 
 
-function add_token() {
+function add_token(clicked) {
+    // we're passing in the column that was clicked...just what is this though? and object?
+    // which player?
+    var open_cell;
 
+    console.log(clicked);
+
+    // go down the column, checking each cell for an empty slot
+    for (var i = 0; i < board.length; i++) {
+        if (board[column_number][i] === current_player) {
+
+        }
+    }
 }
 
 
 
 function switch_player() {
-
+    current_player++;
+    if (current_player > number_of_players) {
+        current_player = 1;
+    }
 }
 
 
@@ -106,7 +140,7 @@ function check_for_diff_colors() {
 
 
 function game_won() {
-
+    alert(current_player + ' won the game!');
 }
 
 // TESTING FUNCTION!! REMOVE BEFORE GOING LIVE
@@ -117,4 +151,4 @@ function display_array(array) {
     }
     console.log(output);
 }
-display_array(create_board_array);
+display_array(board);
