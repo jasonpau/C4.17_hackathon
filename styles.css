@@ -3,7 +3,7 @@
 #board_wrapper {
     border: 5px solid black;
     margin: 0 auto;
-    width: auto;
+    //width: auto;
     font-size: 0;
     position: absolute;
     top: 50%;
