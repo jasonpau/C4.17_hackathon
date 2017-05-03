@@ -39,11 +39,13 @@ function initialize_game() {
 }
 
 function create_DOM_board(col, row) {
-    var $div = $("<div>").addClass("column").text("O");
-    var $row = $("<div>").addClass("row");
-    var $section = $("#board-wrapper");
+    var $section = $("#board_wrapper");
+    $section.empty($("div.row"));
     for(var i = 0; i < row; i++) {
+        var $row = $("<div>").addClass("row");
+
         for(var j = 0; j < col; j++) {
+            var $div = $("<div>").addClass("column").text("O");
             $row.append($div);
             console.log($row);
         }
