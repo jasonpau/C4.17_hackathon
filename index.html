@@ -59,11 +59,18 @@
     <div id="setup_wrapper">
         <h2>Game Options</h2>
         <hr />
-        <button id="two_players">2 Player</button>
-        <button id="three_players">3 Player</button>
+        <form action="">
+            <input type="radio" name="Players" value="2 players" id="two_players" checked> 2 Players
+            <input type="radio" name="Players" value="3 players" id="three_players"> 3 Players
+        </form>
         <hr />
-        <label for="column_input">Columns: </label><input value="5" id="column_input" />
-        <label for="row_input">Rows: </label><input value="6" id="row_input" />
+        <form action="">
+            <input type="radio" name="Grid" value="6 x 5" id="small" checked> Small
+            <input type="radio" name="Grid" value="10 x 8" id="medium"> Medium
+            <input type="radio" name="Grid" value="12 x 10" id="large"> Large
+        </form>
+        <!--<label for="column_input">Columns: </label><input value="5" id="column_input" />-->
+        <!--<label for="row_input">Rows: </label><input value="6" id="row_input" />-->
         <hr />
         <button type="button" id="play_game">Play</button>
     </div>
