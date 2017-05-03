@@ -59,6 +59,10 @@ hr {
     background-color: rgba(0,0,0,0.7);
 }
 
+.column:hover {
+    background-color: rgba(255, 255, 255, 0.17);
+}
+
 .row .column {
     font-size: initial;
     display: inline-block;
@@ -72,6 +76,13 @@ hr {
 
 .row:nth-child(even) .column:nth-child(even) {
     background-color: rgba(0,0,0,0.15);
+}
+.row:nth-child(odd) .column:nth-child(odd):hover {
+    background-color: rgba(255, 255, 255, 0.17);
+}
+
+.row:nth-child(even) .column:nth-child(even):hover {
+    background-color: rgba(255, 255, 255, 0.17);
 }
 
 .p1, .p2, .p3 {
