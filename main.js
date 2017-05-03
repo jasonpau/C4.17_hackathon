@@ -15,11 +15,19 @@ $(document).ready(function(){
 
 //Event Listener
     $("#play_game").on("click",initialize_game);
+
     $("#new_game").on("click",reset_game);
+
+    $("#how_many").change(function() {
+        number_of_gems_to_win = $("#how_many").val();
+        console.log("Number of Gems to Win: ",number_of_gems_to_win);
+    });
+
     $("#two_players").click(function() {
         number_of_players = 2;
         console.log("Number of Players: ",number_of_players);
     });
+
     $("#three_players").click(function() {
         number_of_players = 3;
         console.log("Number of Players: ",number_of_players);
@@ -89,6 +97,7 @@ function create_board_array(col, row) {
 
 
 function create_DOM_board(col, row) {
+    $("#game_header").text("Connect " + number_of_gems_to_win);
     var $section = $("#board_wrapper");
     $section.empty($("div.row"));
     for(var i = 0; i < row; i++) {
@@ -155,6 +164,7 @@ function switch_player() {
     if (current_player > number_of_players) {
         current_player = 1;
     }
+    $("#current-player").text("Player " + current_player + " you're up~!");
 }
 
 // I DON'T THINK WE NEED THIS...WE'RE UPDATING THE DOM IN THE ADD_TOKEN FUNCTION
@@ -181,7 +191,7 @@ function check_for_win(row, col){
     for(var c = col; c < board[row].length; c++){
         if(board[row][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -195,7 +205,7 @@ function check_for_win(row, col){
     for(var c = col; c >= 0; c--){
         if(board[row][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -212,7 +222,7 @@ function check_for_win(row, col){
     for(var r = row; r >= 0; r--){
         if(board[r][col] === current_player){
             temp_win_count++;
-            if(temp_win_count === number_of_gems_to_win){
+            if(temp_win_count === parseInt(number_of_gems_to_win)){
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -227,7 +237,8 @@ function check_for_win(row, col){
     for(var r = row; r < board.length; r++){
         if(board[r][col] === current_player){
             temp_win_count++;
-            if(temp_win_count === number_of_gems_to_win){
+            console.log("numberof gems: ",number_of_gems_to_win);
+            if(temp_win_count === parseInt(number_of_gems_to_win)){
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -243,7 +254,7 @@ function check_for_win(row, col){
     for(var r = row, c = col; r > 0 && c < board[row].length; r--, c++){
         if(board[r][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -258,7 +269,7 @@ function check_for_win(row, col){
     for(var r = row, c = col; r < board.length && c < board[row].length; r++, c--){
         if(board[r][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -274,7 +285,7 @@ function check_for_win(row, col){
     for(var r = row, c = col; r > 0 && c > 0; r--, c--){
         if(board[r][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
@@ -289,7 +300,7 @@ function check_for_win(row, col){
     for(var r = row, c = col; r < board.length && c < board[row].length; r++, c++){
         if(board[r][c] === current_player) {
             temp_win_count++;
-            if (temp_win_count === number_of_gems_to_win) {
+            if (temp_win_count === parseInt(number_of_gems_to_win)) {
                 console.log('You won the game!');
                 game_won();
                 return;
