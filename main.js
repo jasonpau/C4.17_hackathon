@@ -3,11 +3,66 @@
  */
 
 var temp_win_count = null;
-var number_of_players = null;
+var number_of_players = 2;
 var current_player = 1;
 var number_of_col = null;
 var number_of_row = null;
 var board = [];
+
+
+$(document).ready(function(){
+
+//Event Listener
+    $("#play_game").on("click",initialize_game);
+    $("#two_players").click(function() {
+        number_of_players = 2;
+        console.log("Number of Players: ",number_of_players);
+    });
+    $("#three_players").click(function() {
+        number_of_players = 3;
+        console.log("Number of Players: ",number_of_players);
+    });
+
+    $("#small").click(function() {
+        number_of_col = 6;
+        number_of_row = 5;
+        console.log("Number of Columns: ",number_of_col, "Number of Rows: ",number_of_row);
+    });
+
+    $("#medium").click(function() {
+        number_of_col = 9;
+        number_of_row = 7;
+        console.log("Number of Columns: ",number_of_col, "Number of Rows: ",number_of_row);
+    });
+
+    $("#large").click(function() {
+        number_of_col = 12;
+        number_of_row = 10;
+        console.log("Number of Columns: ",number_of_col, "Number of Rows: ",number_of_row);
+    });
+
+    // number_of_col = $("#column_input").val();
+    // $("#column_input").change(function() {
+    //     number_of_col = $("#column_input").val();
+    //     console.log("Number of Columns: ",number_of_col);
+    // });
+    //
+    // number_of_row = $("#row_input").val();
+    // $("#row_input").change(function() {
+    //     number_of_row = $("#row_input").val();
+    //     console.log("Number of Rows: ",number_of_row);
+    // });
+
+});
+
+
+function initialize_game() {
+
+    create_board_array(number_of_col,number_of_row);
+    create_DOM_board(number_of_col,number_of_row);
+
+}
+
 
 function create_board_array(col, row) {
     for(var i = 0; i < row; i++) {
@@ -20,24 +75,7 @@ function create_board_array(col, row) {
     }
     console.log(board);
 }
-create_board_array(6,5);
 
-
-$(document).ready(function(){
-
-//Event Listener
-$("#play_game").on("click",initialize_game);
-
-});
-
-
-function initialize_game() {
-
-// jQuery DOM CREATION
-
-    create_DOM_board(6,5);
-
-}
 
 function create_DOM_board(col, row) {
     var $section = $("#board_wrapper");
@@ -48,10 +86,8 @@ function create_DOM_board(col, row) {
         for(var j = 0; j < col; j++) {
             var $div = $("<div>").addClass("column");
             $row.append($div);
-            console.log($row);
         }
         $section.append($row);
-        // board.push(newRow);
     }
     $section.on("click",".column",function() {
         var click = $(this);
@@ -85,7 +121,6 @@ function add_token(clicked) {
 }
 
 
-
 function switch_player() {
     current_player++;
     if (current_player > number_of_players) {
@@ -94,12 +129,9 @@ function switch_player() {
 }
 
 
-
 function update_dom() {
 
 }
-
-
 
 
 function check_for_win(row, col){
