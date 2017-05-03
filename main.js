@@ -66,7 +66,10 @@ function initialize_game() {
 }
 
 function reset_game() {
-
+        create_board_array(number_of_col,number_of_row);
+        create_DOM_board(number_of_col,number_of_row);
+        $('#won_background').css('visibility','hidden');
+        $("#setup_background").css("visibility","visible");
 }
 
 function create_board_array(col, row) {
