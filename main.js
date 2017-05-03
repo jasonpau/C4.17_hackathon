@@ -2,7 +2,8 @@
  * Created by JTM on 5/2/17.
  */
 
-var temp_win_count = null;
+//var temp_win_count = null;
+var number_of_gems_to_win = 4;
 var number_of_players = 2;
 var current_player = 1;
 var number_of_col = 6;
@@ -66,10 +67,15 @@ function initialize_game() {
 }
 
 function reset_game() {
+    current_player = 1;
+    $('#won_background').css('visibility','hidden');
+    $("#setup_background").css("visibility","visible");
 
+    $("#board_wrapper").off("click",".column");
 }
 
 function create_board_array(col, row) {
+    board = [];
     for(var i = 0; i < row; i++) {
         var newRow = [];
         for(var j = 0; j < col; j++) {
@@ -109,6 +115,7 @@ function add_token(clicked) {
 
     // get the index of the column clicked (starts at 0)
     var c = clicked.index();
+    var r;
 
     console.log(clicked);
 
@@ -119,7 +126,7 @@ function add_token(clicked) {
     // }
 
     // go down the column, checking each cell for an empty slot
-    for (var r = 0; r < board.length; r++) {
+    for (r = 0; r < board.length; r++) {
         if (board[r][c] === 0) {
             var css_r = r + 1;
             var css_c = c + 1;
@@ -133,10 +140,13 @@ function add_token(clicked) {
     board[open_board_cell_row_index][c] = current_player;
     open_dom_cell.addClass('p' + current_player.toString());
 
+    check_for_win(open_board_cell_row_index,c);
+
     console.log(open_dom_cell);
     display_array(board);
 
     switch_player();
+    console.log('it is now player ' + current_player + 's turn');
 }
 
 
@@ -153,8 +163,144 @@ function update_dom() {
 }
 
 
-function check_for_win(row, col) {
+// var test_array =
+//     [
+//         [0, 0, 0, 0, 0, 1],
+//         [0, 0, 1, 0, 1, 0],
+//         [0, 0, 1, 1, 0, 0],
+//         [0, 0, 1, 0, 1, 0],
+//         [0, 0, 1, 0, 0, 1]
+//     ];
 
+
+
+function check_for_win(row, col){
+    console.log('beginning the check win function...');
+    var temp_win_count = 0;
+    // row : to right end
+    for(var c = col; c < board[row].length; c++){
+        if(board[row][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('to right: you did not match 4...yet');
+            break;
+        }
+    }   temp_win_count -=1;
+    // row : to left end
+    for(var c = col; c >= 0; c--){
+        if(board[row][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        }  else {
+            console.log('to left: you did not match 4');
+            break;
+        }
+    }
+    temp_win_count = 0;
+
+
+    // col : upward
+    for(var r = row; r >= 0; r--){
+        if(board[r][col] === current_player){
+            temp_win_count++;
+            if(temp_win_count === number_of_gems_to_win){
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('upward: you did not match 4');
+            break;
+        }
+    }
+    temp_win_count -=1;
+    // col : downward
+    for(var r = row; r < board.length; r++){
+        if(board[r][col] === current_player){
+            temp_win_count++;
+            if(temp_win_count === number_of_gems_to_win){
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('downward: you did not match 4');
+            break;
+        }
+    }
+    temp_win_count = 0;
+
+    // diagonal : right - up
+    for(var r = row, c = col; r > 0 && c < board[row].length; r--, c++){
+        if(board[r][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('right - up : you did not match 4...yet');
+            break;
+        }
+    }
+    temp_win_count -=1;
+    // diagonal : left - down
+    for(var r = row, c = col; r < board.length && c < board[row].length; r++, c--){
+        if(board[r][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('left - down : you did not match 4...yet');
+            break;
+        }
+    }
+
+    temp_win_count =0;
+    //diagonal : left - up
+    for(var r = row, c = col; r > 0 && c > 0; r--, c--){
+        if(board[r][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('left - up : you did not match 4...yet');
+            break;
+        }
+    }
+    temp_win_count -=1;
+    // diagonal : right - down
+    for(var r = row, c = col; r < board.length && c < board[row].length; r++, c++){
+        if(board[r][c] === current_player) {
+            temp_win_count++;
+            if (temp_win_count === number_of_gems_to_win) {
+                console.log('You won the game!');
+                game_won();
+                return;
+            }
+        } else {
+            console.log('right - down : you did not match 4...yet');
+            break;
+        }
+    }
+    temp_win_count = 0;
+    console.log('...and we finished the check win and found nothing!')
 }
 
 function check_for_diff_colors() {
