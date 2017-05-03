@@ -30,6 +30,7 @@ $("#play_game").on("click",initialize_game);
 
 });
 
+
 function initialize_game() {
 
 // jQuery DOM CREATION
@@ -45,13 +46,17 @@ function create_DOM_board(col, row) {
         var $row = $("<div>").addClass("row");
 
         for(var j = 0; j < col; j++) {
-            var $div = $("<div>").addClass("column").text("O");
+            var $div = $("<div>").addClass("column");
             $row.append($div);
             console.log($row);
         }
         $section.append($row);
         // board.push(newRow);
     }
+    $section.on("click",".column",function() {
+        var click = $(this);
+        add_token(click);
+    });
 }
 
 
@@ -60,13 +65,14 @@ function add_token(clicked) {
     // which player?
     var open_cell;
 
+    console.log(clicked);
+
     // go down the column, checking each cell for an empty slot
     for (var i = 0; i < board.length; i++) {
         if (board[column_number][i] === current_player) {
 
         }
     }
-
 }
 
 
