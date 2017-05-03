@@ -3,8 +3,20 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    background: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+
 }
 
 #board_wrapper {
@@ -19,7 +31,7 @@ body {
 }
 
 .row {
-
+    background-color: rgba(0,0,0,0.7);
 }
 
 .row .column {
@@ -27,7 +39,14 @@ body {
     display: inline-block;
     height: 50px;
     width: 50px;
-    border: 1px solid gray;
+}
+
+.row:nth-child(odd) .column:nth-child(odd) {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.row:nth-child(even) .column:nth-child(even) {
+    background-color: rgba(0,0,0,0.1);
 }
 
 .p1, .p2, .p3 {
@@ -35,15 +54,22 @@ body {
 }
 
 .p1 {
-    background-color: blue;
+    background: url(images/p1.png);
+    background-size: contain;
+    background-position: center;
+
 }
 
 .p2 {
-    background-color: red;
+    background: url(images/p2.png);
+    background-size: contain;
+    background-position: center;
 }
 
 .p3 {
-    background-color: green;
+    background: url(images/p3.png);
+    background-size: contain;
+    background-position: center;
 }
 
 #setup_background,
@@ -64,6 +90,10 @@ body {
     margin: 0 auto;
     background: white;
     padding: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 #setup_background {
@@ -79,5 +109,5 @@ body {
 }
 
 #won_wrapper {
-
+    text-align: center;
 }
