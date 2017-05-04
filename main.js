@@ -95,9 +95,10 @@ function create_board_array(col, row) {
     console.log(board);
 }
 
-
 function create_DOM_board(col, row) {
     $("#game_header").text("Connect " + number_of_gems_to_win);
+    $("#current-player").text("Player " + current_player + " you're up~!");
+    $("#player_gem_color").addClass('p' + current_player);
     var $section = $("#board_wrapper");
     $section.empty($("div.row"));
     for(var i = 0; i < row; i++) {
@@ -165,6 +166,8 @@ function switch_player() {
         current_player = 1;
     }
     $("#current-player").text("Player " + current_player + " you're up~!");
+    $("#player_gem_color").removeClass();
+    $("#player_gem_color").addClass('p' + current_player);
 }
 
 // I DON'T THINK WE NEED THIS...WE'RE UPDATING THE DOM IN THE ADD_TOKEN FUNCTION

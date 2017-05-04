@@ -43,6 +43,11 @@ hr {
                 inset 0 2px 15px rgba(0,0,0,0.4);
 }
 
+#player_gem_color {
+    height: 50px;
+    width: 50px;
+    margin: -20px auto 20px auto;
+}
 
 #board_background {
     text-align: center;
@@ -63,6 +68,7 @@ hr {
 
 .column:hover {
     background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
 }
 
 .row .column {
@@ -81,14 +87,16 @@ hr {
 }
 .row:nth-child(odd) .column:nth-child(odd):hover {
     background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
 }
 
 .row:nth-child(even) .column:nth-child(even):hover {
     background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
 }
 
 .p1, .p2, .p3 {
-
+    transition: all 0.2s ease;
 }
 
 .p1 {
@@ -169,4 +177,9 @@ hr {
 #play_game:hover,
 #new_game:hover {
     opacity: 1;
+}
+
+.destroy_column {
+    background-color: rgba(255,255,0,0.7);
+    transition: all 0.2s ease;
 }
