@@ -151,6 +151,8 @@ function add_token(clicked) {
 
     check_for_win(open_board_cell_row_index,c);
 
+    check_for_three_diff(open_board_cell_row_index,c);
+
     console.log(open_dom_cell);
     display_array(board);
 
@@ -335,3 +337,201 @@ function display_array(array) {
     console.log(output);
 }
 display_array(board);
+
+function check_for_three_diff(row, col){
+    // check left / right - o -
+    var check1 = '';
+    check1 += board[row][col];
+    check1 += board[row][col-1];
+    check1 += board[row][col+1];
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal up left / down right - o -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row-1]) {
+        check1 += board[row-1][col-1];
+    }
+    if (board[row+1]) {
+        check1 += board[row+1][col+1];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal up right / down left - o -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row-1]) {
+        check1 += board[row-1][col+1];
+    }
+    if (board[row+1]) {
+        check1 += board[row+1][col-1];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check right o - -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row]) {
+        check1 += board[row][col+1];
+    }
+    if (board[row]) {
+        check1 += board[row][col+2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check left - - o
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row]) {
+        check1 += board[row][col-1];
+    }
+    if (board[row]) {
+        check1 += board[row][col-2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal up right o - -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row-1]) {
+        check1 += board[row-1][col+1];
+    }
+    if (board[row-2]) {
+        check1 += board[row-2][col+2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal up left - - o
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row-1]) {
+        check1 += board[row-1][col-1];
+    }
+    if (board[row-2]) {
+        check1 += board[row-2][col-2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal down right o - -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row+1]) {
+        check1 += board[row+1][col+1];
+    }
+    if (board[row+2]) {
+        check1 += board[row+2][col+2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check diagonal down left - - o
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row+1]) {
+        check1 += board[row+1][col-1];
+    }
+    if (board[row+2]) {
+        check1 += board[row+2][col-2];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+
+    // check down o - -
+    check1 = '';
+    check1 += board[row][col];
+    if (board[row+1]) {
+        check1 += board[row+1][col];
+    }
+    if (board[row+2]) {
+        check1 += board[row+2][col];
+    }
+    if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
+        console.log('we got 3 pieces');
+        for(var r = 0; r<board.length; r++){
+            var css_r = r + 1;
+            var css_c = col + 1;
+            board[r][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            console.log('cell destroyed!');
+        }
+    }
+}
