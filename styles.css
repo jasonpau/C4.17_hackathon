@@ -1,0 +1,205 @@
+/* TEAM ADD FUNC! -- Here's our stylesheet */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Cherry Swash', serif;
+    text-align: center;
+    font-size: 2em;
+}
+
+hr {
+    opacity: 0.5;
+    margin: 15px 0;
+}
+
+label {
+    padding: 5px;
+}
+
+input[type=text] {
+    padding: 5px;
+    width: 80px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+#game_header {
+    text-align: center;
+    font-size: 48px;
+    color: lightyellow;
+    text-shadow: rgba(0,0,0,0.3) 0 1px 5px;
+    background-color: purple;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 50px;
+    padding-bottom: 5px;
+    border: 5px solid lightyellow;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4),
+                inset 0 2px 15px rgba(0,0,0,0.4);
+}
+
+#current-player {
+    color: lightyellow;
+}
+
+#player_gem_color {
+    height: 50px;
+    width: 50px;
+    margin: -20px auto 20px auto;
+}
+
+#board_background {
+    text-align: center;
+}
+
+#board_wrapper {
+    margin: 0 auto;
+    font-size: 0;
+    display: inline-block;
+    border: 5px solid lightyellow;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4),
+                inset 0 2px 15px rgba(0,0,0,0.4);
+}
+
+.row {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.column:hover {
+    background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
+}
+
+.row .column {
+    font-size: initial;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+.row:nth-child(odd) .column:nth-child(odd) {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.row:nth-child(even) .column:nth-child(even) {
+    background-color: rgba(0,0,0,0.15);
+}
+.row:nth-child(odd) .column:nth-child(odd):hover {
+    background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
+}
+
+.row:nth-child(even) .column:nth-child(even):hover {
+    background-color: rgba(255, 255, 255, 0.17);
+    transition: all 0.2s ease;
+}
+
+.p1, .p2, .p3 {
+    transition: all 0.2s ease;
+}
+
+.p1 {
+    background: url(images/p1.png);
+    background-size: contain;
+    background-position: center;
+
+}
+
+.p2 {
+    background: url(images/p2.png);
+    background-size: contain;
+    background-position: center;
+}
+
+.p3 {
+    background: url(images/p3.png);
+    background-size: contain;
+    background-position: center;
+}
+
+.black {
+    background: url(images/black.png);
+    background-size: contain;
+    background-position: center;
+}
+#setup_background,
+#won_background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+#setup_wrapper,
+#won_wrapper {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: purple;
+    color: lightyellow;
+    padding: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 5px solid lightyellow;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.6),
+                inset 0 2px 50px rgba(0,0,0,0.6);
+
+}
+
+#setup_background {
+    visibility: visible;
+}
+
+#setup_wrapper {
+
+}
+
+#won_background {
+    visibility: hidden;
+}
+
+#won_wrapper {
+    text-align: center;
+}
+
+#play_game,
+#new_game {
+    padding: 10px 20px;
+    color: purple;
+    font-family: 'Cherry Swash', serif;
+    font-size: 24px;
+    font-weight: bold;
+    border: 0;
+    background: lightyellow;
+    opacity: 0.9;
+}
+
+#play_game:hover,
+#new_game:hover {
+    opacity: 1;
+}
+
+.destroy_column {
+    background-color: rgba(255,255,0,0.7);
+    transition: all 0.2s ease;
+}
