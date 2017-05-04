@@ -43,13 +43,15 @@ hr {
                 inset 0 2px 15px rgba(0,0,0,0.4);
 }
 
+
+#board_background {
+    text-align: center;
+}
+
 #board_wrapper {
     margin: 0 auto;
     font-size: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    display: inline-block;
     border: 5px solid lightyellow;
     box-shadow: 0 2px 15px rgba(0,0,0,0.4),
                 inset 0 2px 15px rgba(0,0,0,0.4);
@@ -57,6 +59,10 @@ hr {
 
 .row {
     background-color: rgba(0,0,0,0.7);
+}
+
+.column:hover {
+    background-color: rgba(255, 255, 255, 0.17);
 }
 
 .row .column {
@@ -72,6 +78,13 @@ hr {
 
 .row:nth-child(even) .column:nth-child(even) {
     background-color: rgba(0,0,0,0.15);
+}
+.row:nth-child(odd) .column:nth-child(odd):hover {
+    background-color: rgba(255, 255, 255, 0.17);
+}
+
+.row:nth-child(even) .column:nth-child(even):hover {
+    background-color: rgba(255, 255, 255, 0.17);
 }
 
 .p1, .p2, .p3 {
@@ -139,4 +152,21 @@ hr {
 
 #won_wrapper {
     text-align: center;
+}
+
+#play_game,
+#new_game {
+    padding: 10px 20px;
+    color: purple;
+    font-family: 'Cherry Swash', serif;
+    font-size: 24px;
+    font-weight: bold;
+    border: 0;
+    background: lightyellow;
+    opacity: 0.9;
+}
+
+#play_game:hover,
+#new_game:hover {
+    opacity: 1;
 }
