@@ -349,13 +349,13 @@ function check_for_three_diff(row, col){
     check1 += board[row][col+1];
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
-        for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+        // for(var r = 0; r<board.length; r++){
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
-        }
+            board[row][col] = 4;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
+            console.log('THE ROCK!!');
+        // }
     }
 
     // check diagonal up left / down right - o -
@@ -370,11 +370,11 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 1;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
+
         }
     }
 
@@ -390,11 +390,11 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
+
         }
     }
 
@@ -410,10 +410,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row+ 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
             console.log('cell destroyed!');
         }
     }
@@ -430,10 +430,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
             console.log('cell destroyed!');
         }
     }
@@ -450,11 +450,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
         }
     }
 
@@ -469,12 +468,11 @@ function check_for_three_diff(row, col){
     }
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
-        for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+        for(var r = 0; r<board.length; r++) {
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
         }
     }
 
@@ -490,11 +488,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
         }
     }
 
@@ -510,11 +507,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
         }
     }
 
@@ -530,11 +526,10 @@ function check_for_three_diff(row, col){
     if(check1.indexOf(1)+check1.indexOf(2)+check1.indexOf(3) === 3){
         console.log('we got 3 pieces');
         for(var r = 0; r<board.length; r++){
-            var css_r = r + 1;
+            var css_r = row + 1;
             var css_c = col + 1;
-            board[r][col] = 0;
-            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').removeClass('p1 p2 p3');
-            console.log('cell destroyed!');
+            board[row][col] = 0;
+            $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')').addClass('black');
         }
     }
 }
