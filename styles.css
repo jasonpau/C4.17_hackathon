@@ -118,6 +118,11 @@ hr {
     background-position: center;
 }
 
+.black {
+    background: url(images/black.png);
+    background-size: contain;
+    background-position: center;
+}
 #setup_background,
 #won_background {
     height: 100%;
