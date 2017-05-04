@@ -96,9 +96,14 @@ function create_board_array(col, row) {
 }
 
 function create_DOM_board(col, row) {
+    if (number_of_gems_to_win > number_of_col) {
+        number_of_gems_to_win = number_of_col;
+    }
+
     $("#game_header").text("Connect " + number_of_gems_to_win);
     $("#current-player").text("Player " + current_player + " you're up~!");
     $("#player_gem_color").addClass('p' + current_player);
+
     var $section = $("#board_wrapper");
     $section.empty($("div.row"));
     for(var i = 0; i < row; i++) {
