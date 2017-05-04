@@ -11,7 +11,9 @@
       - horizontal
       - vertical
       - diagonal
-  - Mystery Requirement - TBA ***soooooooon***
+  - Mystery Requirement - 
+  	- Must include ability to have 3 players.
+	- Must incorporate a dynamic when 3 alternate colors are contiguous with each other.
 
 ### Judging criteria
 - Intiutiveness / Ease of Use
