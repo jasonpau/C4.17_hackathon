@@ -54,6 +54,10 @@ input[type=text] {
                 inset 0 2px 15px rgba(0,0,0,0.4);
 }
 
+#current-player {
+    color: lightyellow;
+}
+
 #player_gem_color {
     height: 50px;
     width: 50px;

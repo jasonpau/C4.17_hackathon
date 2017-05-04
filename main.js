@@ -134,12 +134,6 @@ function add_token(clicked) {
 
     console.log(clicked);
 
-    // check to see if the very top is full, if so, exit this add token (it'll stay on the current player)
-    // if (board[0][c] !== 0) {
-    //     console.log('it be full!!!');
-    //     //break;
-    // }
-
     // go down the column, checking each cell for an empty slot
     for (r = 0; r < board.length; r++) {
         if (board[r][c] === 0) {
@@ -149,6 +143,11 @@ function add_token(clicked) {
             open_board_cell_row_index = r;
             open_dom_cell = $('.row:nth-child(' + css_r + ') .column:nth-child(' + css_c + ')');
         }
+    }
+
+    // if we didn't find an open spot above, exit the function
+    if (open_board_cell_row_index === undefined) {
+        return;
     }
 
     // update both the js array and the dom
