@@ -27,6 +27,17 @@ hr {
     margin: 15px 0;
 }
 
+label {
+    padding: 5px;
+}
+
+input[type=text] {
+    padding: 5px;
+    width: 80px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
 #game_header {
     text-align: center;
     font-size: 48px;
